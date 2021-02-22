@@ -13,8 +13,7 @@ module.exports = class MessageEvent extends BaseEvent {
     if (inviteLink.some(word => message.content.toLowerCase().includes(word))) {
       
       //Delete message
-      message.delete(inviteLink);
-      message.channel.send("🔐 Discord link byl vymazán!");
+      message.delete(inviteLink)
       //Console log
       console.log("Discord link byl vymazán! Jméno: " + (message.author.username) +" │ Server: " + message.guild.name)
     }
