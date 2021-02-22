@@ -2,6 +2,7 @@
 Protection Discord bot
 
 Discord bot bude kompletně řešit ochranu tvého Disocrd serveru.
+
 Hlavní funkce
 
 1) Blokování Toxic hráčů
