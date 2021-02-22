@@ -1,5 +1,5 @@
-const BaseEvent = require('../utils/structures/BaseEvent');
-const { MessageEmbed } = require('discord.js');
+// https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-messageDelete
+const BaseEvent = require('../../utils/structures/BaseEvent');
 module.exports = class MessageEvent extends BaseEvent {
   constructor() {
     super('message');
