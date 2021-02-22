@@ -14,6 +14,7 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
       message.delete(nsfw);
 
       message.channel.send("🔞 Toto není NSFW");
+
     }
   }
 }
