@@ -8,10 +8,7 @@ module.exports = class InviteCommand extends BaseCommand {
 
   run(client, message, args) {
     
-    return message.member
-      .send(
-        `https://discord.com/oauth2/authorize?client_id=${message.client.user.id}&permissions=70282305&scope=bot `
-      )
+    message.channel.send [LINK]("https://discord.com/oauth2/authorize?client_id=${message.client.user.id}&permissions=70282305&scope=bot")
     
       //Chyba permission asi
   }
