@@ -17,7 +17,6 @@ module.exports = class MessageEvent extends BaseEvent {
       message.channel.send("🔐 Discord link byl vymazán!");
       //Console log
       console.log("Discord link byl vymazán! Jméno: " + (message.author.username) +" │ Server: " + message.guild.name)
-      //Next code ?
     }
 
   }
