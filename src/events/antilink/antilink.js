@@ -14,9 +14,8 @@ module.exports = class MessageEvent extends BaseEvent {
       
       //Delete message
       message.delete(inviteLink);
-      message.channel.send("🔐 Discord link byl vymazán!");
+      message.channel.send("🔐 Pozvánka byla vymazána!");
       //Console log
-      console.log("Discord link byl vymazán! Jméno: " + (message.author.username) +" │ Server: " + message.guild.name)
       //Next code ?
     }
 
