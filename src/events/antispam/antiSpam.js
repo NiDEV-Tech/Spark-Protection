@@ -1,6 +1,9 @@
 const BaseEvent = require('../../utils/structures/BaseEvent');
 const AntiSpam = require('discord-anti-spam');
 
+// Bouhžel zatím API nefunguje
+// Odkaz : https://www.npmjs.com/package/discord-anti-spam
+// Odkaz na support Disord : https://discord.com/invite/KQgDfGr
 
 module.exports = class MessageEvent extends BaseEvent {
   constructor() {
@@ -32,6 +35,6 @@ module.exports = class MessageEvent extends BaseEvent {
     });
 
     antiSpam.message(message);
-    
+
   }
 }
