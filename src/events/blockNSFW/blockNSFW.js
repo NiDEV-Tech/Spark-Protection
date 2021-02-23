@@ -1,4 +1,5 @@
 // https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-messageDelete
+const { MessageEmbed, Channel } = require('discord.js');
 const BaseEvent = require('../../utils/structures/BaseEvent');
 module.exports = class MessageDeleteEvent extends BaseEvent {
   constructor() {
@@ -13,7 +14,20 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
 
       message.delete(nsfw);
 
-      message.channel.send("🔞 Toto není NSFW");
+      //Embed message
+
+      var boticon = client.user.displayAvatarURL();
+
+      const embedNsfw = new MessageEmbed()
+
+          .setAuthor("⚡Spark Protect")
+          .setTitle("NSFW Protect")
+          .setColor("#ff0000")
+          .setThumbnail(boticon)
+          .setDescription("V tomto channelu není povolenou sdílet **NSFW** obsah!\n Doporučujeme si přečíst naše **pravidla**!")
+          .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL());
+          
+      message.channel.send(embedNsfw);
 
     }
   }

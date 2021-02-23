@@ -23,11 +23,11 @@ module.exports = class MessageEvent extends BaseEvent {
 
       const embedAntilink = new MessageEmbed()
 
-          .setTitle("Antilink Protect")
           .setAuthor("⚡Spark Protect")
+          .setTitle("Antilink Protect")
           .setColor("#ff0000")
           .setThumbnail(boticon)
-          .setDescription("Zde není povoleno posílat Discord linky na jiné servery!\n Doporučujeme si přečíst naše **pravidla**!")
+          .setDescription("Zde není povoleno posílat **Discord linky** na jiné servery!\n Doporučujeme si přečíst naše **pravidla**!")
           .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL());
           
       message.channel.send(embedAntilink);    
