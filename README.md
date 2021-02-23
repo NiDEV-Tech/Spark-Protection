@@ -8,3 +8,5 @@ Hlavní funkce
 1) Blokování Toxic hráčů
 2) Blokování invite linků
 3) Blokování NSFW obsahu
+
+*Žádná z aktuálních verzí na GitHUB neobsahuje kompletního funkčního bota!
