@@ -9,7 +9,7 @@ module.exports = class UserinfoCommand extends BaseCommand {
   run(client, message, args) {
     
     
-    if(!args[0]) return message.channel.send('🔐 Musíš zmínit uživatele!');
+    if(!args[0]) return message.channel.send('❓ Musíš mi říct, o kom ti mám zjistit informace!');
 
     
     if(args[0]){
