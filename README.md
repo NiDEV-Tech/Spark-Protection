@@ -1,4 +1,4 @@
-# Spark-Protection
+# ⚡Spark-Protection
 Protection Discord bot
 
 Discord bot bude kompletně řešit ochranu tvého Disocrd serveru.
