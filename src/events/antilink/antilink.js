@@ -1,4 +1,3 @@
-// https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-messageDelete
 const { MessageEmbed, Channel } = require('discord.js');
 const BaseEvent = require('../../utils/structures/BaseEvent');
 module.exports = class MessageEvent extends BaseEvent {

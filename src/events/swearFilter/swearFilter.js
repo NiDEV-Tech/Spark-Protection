@@ -1,4 +1,4 @@
-// https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-messageDelete
+const { MessageEmbed, Channel } = require('discord.js');
 const BaseEvent = require('../../utils/structures/BaseEvent');
 module.exports = class MessageDeleteEvent extends BaseEvent {
   constructor() {
@@ -13,7 +13,21 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
 
       message.delete(swear);
 
-      message.channel.send("🙄 Proč nadáváš?");
+      //Embed message
+
+      var boticon = client.user.displayAvatarURL();
+
+      const embedSwear = new MessageEmbed()
+
+          .setAuthor("⚡Spark Protect")
+          .setTitle("Swear Protect")
+          .setColor("#ff0000")
+          .setThumbnail(boticon)
+          .setDescription("Použil jsi bouhžel slovo, které je na serverovém **blacklistu**!\n Doporučujeme si přečíst naše **pravidla**!")
+          .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL())
+          .addField("Blacklist příkaz", "`sp!black_words`", false);
+          
+      message.channel.send(embedSwear);
     }
   }
 }
