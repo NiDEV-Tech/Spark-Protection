@@ -9,4 +9,8 @@ Hlavní funkce
 2) Blokování invite linků
 3) Blokování NSFW obsahu
 
+Sezna použitých modulů
+
+1) better-discord-antispam
+
 Žádná z aktuálních verzí na GitHUB neobsahuje kompletního funkčního bota!
