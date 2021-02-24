@@ -7,6 +7,6 @@ module.exports = class UptimeCommand extends BaseCommand {
   }
 
   run(client, message, args) {
-    message.channel.send(`🧡 Spark Protect je online po dobu: \`${ms(client.uptime, { long: true })}\``);
+    message.channel.send(`🧡Jsem online po dobu: \`${ms(client.uptime, { long: true })}\``);
   }
 }
