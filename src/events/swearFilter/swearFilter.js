@@ -9,6 +9,7 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
 
     let swear = ["idiot","dement","kokot","kripl","kurva","piča"];
 
+    if (message.author.bot) return; 
     if (swear.some(word => message.content.toLowerCase().includes(word))) {
      
       //Find channel

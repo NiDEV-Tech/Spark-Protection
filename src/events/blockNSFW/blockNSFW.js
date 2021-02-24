@@ -11,6 +11,8 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
 
     if (nsfw.some(word => message.content.toLowerCase().includes(word))) {
         
+      if (message.author.bot) return; 
+      
       //Find channel
       //Premium function !!
       let channel = client.channels.cache.get('784357253490802689');
@@ -45,7 +47,6 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
         .setDescription("Opravdu bych ti doporučil si nejdřív přečíst pravidla serveru! \n Není zde povoleno posílat NSFW obsah! Administrátor byl kontaktován! ")
 
         message.channel.send(embedNsfwChannel);
- 
 
     }
   }

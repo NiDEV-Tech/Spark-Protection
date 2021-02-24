@@ -10,6 +10,7 @@ module.exports = class MessageEvent extends BaseEvent {
     //Blacklist word
     let inviteLink = ["discord.gg/", "discord.com/invite", "discordapp.com/invite", ];
   
+    if (message.author.bot) return; 
     if (inviteLink.some(word => message.content.toLowerCase().includes(word))) {
       
       //Delete message
