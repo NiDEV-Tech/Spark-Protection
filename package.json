@@ -1,5 +1,5 @@
 {
-  "name": "Spark_Protect",
+  "name": "SparkProtect",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord-anti-spam": "^2.5.0",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.7"

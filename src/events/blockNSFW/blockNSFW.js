@@ -12,6 +12,10 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
     if (nsfw.some(word => message.content.toLowerCase().includes(word))) {
 
       message.delete(nsfw);
+        
+      //Find channel
+      //Premium function !!
+      let channel = client.channels.cache.get('814193031233142814');
 
       //Embed message
 
@@ -24,9 +28,12 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
           .setColor("#ff0000")
           .setThumbnail(boticon)
           .setDescription("V tomto channelu není povolenou sdílet **NSFW** obsah!\n Doporučujeme si přečíst naše **pravidla**!")
+          .addField("📝 Jméno serveru", message.guild.name, false)
+          .addField("🤬 Uživatel", message.author.username , false)
+          .addField("📢 Obsah", message.content)
           .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL());
           
-      message.channel.send(embedNsfw);
+      channel.send(embedNsfw);
 
     }
   }

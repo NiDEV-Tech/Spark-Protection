@@ -7,11 +7,13 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
   
   async run(client, message) {
 
-    let swear = ["tydix","idiot","dement","kokot","kripl","kurva","piča"];
+    let swear = ["idiot","dement","kokot","kripl","kurva","piča"];
 
     if (swear.some(word => message.content.toLowerCase().includes(word))) {
-
-      message.delete(swear);
+     
+      //Find channel
+      //Premium function !!
+      let channel = client.channels.cache.get('814193031233142814');
 
       //Embed message
 
@@ -24,10 +26,26 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
           .setColor("#ff0000")
           .setThumbnail(boticon)
           .setDescription("Použil jsi bouhžel slovo, které je na serverovém **blacklistu**!\n Doporučujeme si přečíst naše **pravidla**!")
+          .addField("📝 Jméno serveru", message.guild.name, false)
+          .addField("🤬 Uživatel", message.author.username , false)
+          .addField("📢 Obsah", message.content)
           .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL())
-          .addField("Blacklist příkaz", "`sp!black_words`", false);
           
-      message.channel.send(embedSwear);
+      channel.send(embedSwear);
+
+      //Delete swear
+      message.delete(swear);
+
+      const embedBlackListedWord = new MessageEmbed()
+
+        .setAuthor("⚡Spark Protect")
+        .setTitle("Swear Protect")
+        .setColor("#ff0000")
+        .setThumbnail(boticon)
+        .setDescription("Pozor na zakázané slova. Prosím přečti si naše pravidla \n nebo použij příkaz pro vypsání zakázaných slov. \n\n Příkaz : `sp!swear_word`")
+
+        message.channel.send(embedBlackListedWord);
+
     }
   }
 }
