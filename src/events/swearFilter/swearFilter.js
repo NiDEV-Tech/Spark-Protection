@@ -13,7 +13,7 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
      
       //Find channel
       //Premium function !!
-      let channel = client.channels.cache.get('814193031233142814');
+      let channel = client.channels.cache.get('784357253490802689');
 
       //Embed message
 
@@ -25,7 +25,7 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
           .setTitle("Swear Protect")
           .setColor("#ff0000")
           .setThumbnail(boticon)
-          .setDescription("Použil jsi bouhžel slovo, které je na serverovém **blacklistu**!\n Doporučujeme si přečíst naše **pravidla**!")
+          .setDescription("Někdo použil slovo, které je na serveru zakázané! \n Bylo by dobré jít zkontrolovat tuto aktivitu.")
           .addField("📝 Jméno serveru", message.guild.name, false)
           .addField("🤬 Uživatel", message.author.username , false)
           .addField("📢 Obsah", message.content)
