@@ -8,9 +8,7 @@ Hlavní funkce
 1) Blokování Toxic hráčů
 2) Blokování invite linků
 3) Blokování NSFW obsahu
+4) Anti-raid lock server
 
-Sezna použitých modulů
-
-1) better-discord-antispam
 
 Žádná z aktuálních verzí na GitHUB neobsahuje kompletního funkčního bota!
