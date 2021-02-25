@@ -7,7 +7,8 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
   
   async run(client, message) {
 
-    let swear = ["idiot","dement","kokot","kripl","kurva","piča"];
+    //Import filter
+    const swear = require("./swearList.json");
 
     if (message.author.bot) return; 
     if (swear.some(word => message.content.toLowerCase().includes(word))) {
