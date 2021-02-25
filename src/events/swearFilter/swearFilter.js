@@ -14,7 +14,7 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
      
       //Find channel
       //Premium function !!
-      let channel = client.channels.cache.get('784357253490802689');
+      let channel = client.channels.cache.get('814193031233142814');
 
       //Embed message
 
