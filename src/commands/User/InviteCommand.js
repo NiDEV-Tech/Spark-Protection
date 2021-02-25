@@ -15,12 +15,12 @@ module.exports = class InviteCommand extends BaseCommand {
     let inviteEmbed = new MessageEmbed()
         
         .setTitle("Přidej si mě na server")
-        .setURL("")
+        .setURL("https://discord.com/oauth2/authorize?client_id=813036260452073503&scope=bot&permissions=67357761")
         .setAuthor("⚡Spark Protect")
         .setColor("#ff0000")
         .setThumbnail(boticon)
         .setDescription("Pokud máš zájem tak si můžeš bota přidat na server přímo skrze tento invite link. Neboj se nic, ochráním tě od každé špatnosti.")
-        .addField("📝 Invite link", "[Invite link]()", false)
+        .addField("📝 Invite link", "[Invite link](https://discord.com/oauth2/authorize?client_id=813036260452073503&scope=bot&permissions=67357761)", false)
         .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL())
 
         message.channel.send(inviteEmbed);
