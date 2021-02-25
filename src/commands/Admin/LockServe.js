@@ -1,5 +1,7 @@
+//Constats
 const BaseCommand = require('../../utils/structures/BaseCommand');
 const { MessageEmbed, Channel } = require('discord.js');
+//Modul
 module.exports = class LockCommand extends BaseCommand {
   constructor() {
     super('lockserver', 'Admin', []);
@@ -11,12 +13,15 @@ module.exports = class LockCommand extends BaseCommand {
     const channels = message.guild.channels.cache.filter(ch => ch.type !== 'category');
     
         if (args[0] === 'on') {
+
+            //Raid function
             channels.forEach(channel => {
                 channel.updateOverwrite(message.guild.roles.everyone, {
                     SEND_MESSAGES: false
                 })
             })
             
+            //Embed support log
             let channel = client.channels.cache.get('814193031233142814');
             var boticon = client.user.displayAvatarURL();
 
@@ -30,10 +35,9 @@ module.exports = class LockCommand extends BaseCommand {
                 .addField("📝 Jméno serveru", message.guild.name, false)
                 .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL());
 
+            // Embed send    
             channel.send(raidAlert);
             
-            //return
-            return message.channel.send('locked all channels');
         } else if (args[0] === 'off') {
             channels.forEach(channel => {
                 channel.updateOverwrite(message.guild.roles.everyone, {

@@ -11,7 +11,7 @@ module.exports = class MessageEvent extends BaseEvent {
 
     let channel = client.channels.cache.get('814193031233142814');
 
-    //Blacklist word
+    //Antilink filtr
     let inviteLink = ["discord.gg/", "discord.com/invite", "discordapp.com/invite", ];
   
     if (message.author.bot) return; 
