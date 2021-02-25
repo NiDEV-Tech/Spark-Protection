@@ -16,6 +16,9 @@ module.exports = class MessageEvent extends BaseEvent {
       //Delete message
 
       message.delete(inviteLink);
+
+      //Console
+      console.log("'" + message.author.username + "' poslal link na discord '" + message.content + "'")
       
       //Embed message
 

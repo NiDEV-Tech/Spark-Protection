@@ -34,6 +34,9 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
           
       channel.send(embedSwear);
 
+      //Console log
+      console.log("'" + message.author.username + "' poslal nevhodnou zprávu '" + message.content + "'")
+
       //Delete swear
       message.delete(swear);
 
