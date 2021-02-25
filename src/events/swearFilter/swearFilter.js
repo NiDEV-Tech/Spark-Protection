@@ -14,7 +14,7 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
      
       //Find channel
       //Premium function !!
-      let channel = client.channels.cache.get('784357253490802689');
+      let channel = client.channels.cache.get('814193031233142814');
 
       //Embed message
 
@@ -34,6 +34,9 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
           
       channel.send(embedSwear);
 
+      //Console log
+      console.log("'" + message.author.username + "' poslal nevhodnou zprávu '" + message.content + "'")
+
       //Delete swear
       message.delete(swear);
 
@@ -44,8 +47,24 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
         .setColor("#ff0000")
         .setThumbnail(boticon)
         .setDescription("Pozor na zakázané slova. Prosím přečti si naše pravidla \n nebo použij příkaz pro vypsání zakázaných slov. \n\n Příkaz : `sp!swear_word`")
+        .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL())
 
-        message.channel.send(embedBlackListedWord);
+        message.channel.send(embedBlackListedWord).then(msg => {
+          msg.delete({ timeout: 8000 })
+          })
+
+      //User swear words
+
+      const embedSwearUser = new MessageEmbed()
+
+      .setAuthor("⚡Spark Protect")
+      .setTitle("Swear Protect")
+      .setColor("#ff0000")
+      .setThumbnail(boticon)
+      .setDescription("Pozor na slova, které jsou na serveru zakázána. \n Doporučuji ti přečíst si pravidla serveru. \n\n  Kompletní blacklist najdeš [ZDE](https://www.playinright.cz/) ")
+      .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL())
+
+      message.author.send(embedSwearUser);  
 
     }
   }

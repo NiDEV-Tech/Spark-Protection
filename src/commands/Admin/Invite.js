@@ -23,7 +23,6 @@ module.exports = class InviteCommand extends BaseCommand {
         .addField("📝 Invite link", "[Invite link](https://discord.com/oauth2/authorize?client_id=813036260452073503&scope=bot&permissions=67357761)", false)
         .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL())
 
-        message.channel.send(inviteEmbed);
-
+        message.channel.send(inviteEmbed); 
   }
 }

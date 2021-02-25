@@ -15,7 +15,10 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
       
       //Find channel
       //Premium function !!
-      let channel = client.channels.cache.get('784357253490802689');
+      let channel = client.channels.cache.get('814193031233142814');
+
+      //Console log
+      console.log("'" + message.author.username + "' poslal odkaz na p***o '" + message.content + "'")
 
       //Embed message
 
@@ -45,8 +48,23 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
         .setColor("#ff0000")
         .setThumbnail(boticon)
         .setDescription("Opravdu bych ti doporučil si nejdřív přečíst pravidla serveru! \n Není zde povoleno posílat NSFW obsah! Administrátor byl kontaktován! ")
+        .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL());
 
-        message.channel.send(embedNsfwChannel);
+        message.channel.send(embedNsfwChannel).then(msg => {
+          msg.delete({ timeout: 8000 })
+          })
+
+    //NSFW Embed user      
+    const embedNsfwUser = new MessageEmbed()
+
+        .setAuthor("⚡Spark Protect")
+        .setTitle("NSFW Protect")
+        .setColor("#ff0000")
+        .setThumbnail(boticon)
+        .setDescription("Pozor na to co posíláš do chatu. NSFW obsah je přísně zakázán! \n Doporučuji ti přečíst si pravidla serveru. \n\n Kontaktoval jsem majitele serveru!")
+        .setFooter(`©NiDEV-Tech ${message.guild.me.displayName}`, client.user.displayAvatarURL())
+    
+         message.author.send(embedNsfwUser);    
 
     }
   }
