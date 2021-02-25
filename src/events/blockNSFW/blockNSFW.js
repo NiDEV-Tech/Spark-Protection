@@ -1,12 +1,17 @@
-const { MessageEmbed, Channel } = require('discord.js');
-const BaseEvent = require('../../utils/structures/BaseEvent');
-module.exports = class MessageDeleteEvent extends BaseEvent {
+  //Costance
+  const { MessageEmbed, Channel } = require('discord.js');
+  const BaseEvent = require('../../utils/structures/BaseEvent');
+  module.exports = class MessageDeleteEvent extends BaseEvent {
   constructor() {
     super('message');
   }
   
   async run(client, message) {
 
+    //Variables
+    var boticon = client.user.displayAvatarURL();
+
+    //Import list
     const nsfw = require("./nsfwList.json");
 
     if (nsfw.some(word => message.content.toLowerCase().includes(word))) {
@@ -14,16 +19,9 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
       if (message.author.bot) return; 
       
       //Find channel
-      //Premium function !!
       let channel = client.channels.cache.get('814193031233142814');
-
-      //Console log
-      console.log("'" + message.author.username + "' poslal odkaz na p***o '" + message.content + "'")
-
+      
       //Embed message
-
-      var boticon = client.user.displayAvatarURL();
-
       const embedNsfw = new MessageEmbed()
 
           .setAuthor("⚡Spark Protect")
@@ -38,10 +36,14 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
           
       channel.send(embedNsfw);
 
-    //NSFW Delete
-    message.delete(nsfw);
+      //NSFW Delete
+      message.delete(nsfw);
 
-    const embedNsfwChannel = new MessageEmbed()
+      //Console log
+      console.log("'" + message.author.username + "' poslal odkaz na p***o '" + message.content + "'")
+
+      //Embed channel message
+      const embedNsfwChannel = new MessageEmbed()
 
         .setAuthor("⚡Spark Protect")
         .setTitle("NSFW Protect")
@@ -54,8 +56,8 @@ module.exports = class MessageDeleteEvent extends BaseEvent {
           msg.delete({ timeout: 8000 })
           })
 
-    //NSFW Embed user      
-    const embedNsfwUser = new MessageEmbed()
+      //NSFW Embed user message     
+      const embedNsfwUser = new MessageEmbed()
 
         .setAuthor("⚡Spark Protect")
         .setTitle("NSFW Protect")
