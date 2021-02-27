@@ -11,11 +11,13 @@ module.exports = class MessageEvent extends BaseEvent {
 
     let channel = client.channels.cache.get('814193031233142814');
 
+
+    let link = require ("./linkList.json")
     //Antilink filtr
-    let inviteLink = ["discord.gg/", "discord.com/invite", "discordapp.com/invite", ];
+    //let inviteLink = ["discord.gg/", "discord.com/invite", "discordapp.com/invite", ];
   
     if (message.author.bot) return; 
-    if (inviteLink.some(word => message.content.toLowerCase().includes(word))) {
+    if (link.some(word => message.content.toLowerCase().includes(word))) {
       
       var boticon = client.user.displayAvatarURL();
 
@@ -35,7 +37,7 @@ module.exports = class MessageEvent extends BaseEvent {
 
       //Delete message
 
-      message.delete(inviteLink);
+      message.delete(link);
 
       //Console
       console.log("'" + message.author.username + "' poslal link na discord '" + message.content + "'")
